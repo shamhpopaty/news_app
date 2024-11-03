@@ -11,7 +11,9 @@ final ArticleModel articleModel;
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(6),
-          child: Image(image: NetworkImage(articleModel.image?? ""), fit: BoxFit.cover,width: double.infinity,
+          child: Image(image: articleModel.urlToImage != null
+              ? NetworkImage(articleModel.urlToImage!)
+              : AssetImage('assets/technology.jpeg') as ImageProvider, // استخدم صورة افتراضية عند عدم وجود رابطfit: BoxFit.cover,width: double.infinity,
           height: 200,
           ),
         ),

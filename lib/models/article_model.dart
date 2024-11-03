@@ -1,10 +1,10 @@
 class ArticleModel{
-   final String? image;
+   final String? urlToImage;
    final String title;
    final String? description;
-  ArticleModel({required this.image, required this.title, required this.description});
+  ArticleModel({required this.urlToImage, required this.title, required this.description});
   factory ArticleModel.fromJson(json){
-    return ArticleModel(image: json['urlImage'], title: json['title'], description: json['description']);
+    return ArticleModel(urlToImage: json["urlToImage"], title: json['title'], description: json['description']);
 
   }
 }
